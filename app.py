@@ -1,4 +1,5 @@
 import os
+import base64
 import streamlit as st
 from transcribe import transcribe_audio, meeting_minutes, save_as_docx
 
@@ -24,4 +25,11 @@ if uploaded_file is not None:
   save_as_docx(minutes, docx_filename)
 
   # Provide a link to download the docx file
-  st.markdown(f"[Download the meeting minutes]({docx_filename})")
+  def get_binary_file_downloader_html(bin_file, file_label='File'):
+    with open(bin_file, 'rb') as f:
+      data = f.read()
+    bin_str = base64.b64encode(data).decode()
+    href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
+    return href
+
+  st.markdown(get_binary_file_downloader_html(docx_filename, 'Word Document'), unsafe_allow_html=True)
