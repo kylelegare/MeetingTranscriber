@@ -3,6 +3,8 @@ import base64
 import streamlit as st
 from transcribe import transcribe_audio, meeting_minutes, save_as_docx
 
+st.title("GPT-4 Powered Meeting Transcriber and Summarizer") 
+
 # Put your secret key in the Streamlit secrets.toml
 my_secret = st.secrets["OPENAI_API_KEY"]
 
