@@ -32,4 +32,4 @@ if uploaded_file is not None:
     href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
     return href
 
-  st.markdown(get_binary_file_downloader_html(docx_filename, 'Word Document'), unsafe_allow_html=True)
+  st.markdown(get_binary_file_downloader_html(docx_filename, 'Meeting Summary'), unsafe_allow_html=True)
