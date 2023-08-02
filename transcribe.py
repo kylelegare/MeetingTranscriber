@@ -1,10 +1,10 @@
 # transcribe.py
 import openai
 from docx import Document
-import os
+
 
 # Add your OPENAI_API_KEY to your environment variables
-openai_api_key = os.environ.get("OPENAI_API_KEY")
+openai_api_key = st.secrets['OPENAI_API_KEY']
 
 
 # Function to transcribe audio
