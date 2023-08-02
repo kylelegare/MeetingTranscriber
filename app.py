@@ -10,6 +10,7 @@ Drop in your audio or video file and after it's finished you'll have a word doc 
 * Meeting summary
 * Key points
 * Action items
+* Sentiment Analysis
 """)
 
 # Put your secret key in the Streamlit secrets.toml
