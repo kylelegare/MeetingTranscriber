@@ -3,7 +3,14 @@ import base64
 import streamlit as st
 from transcribe import transcribe_audio, meeting_minutes, save_as_docx
 
-st.title("GPT-4 Powered Meeting Transcriber and Summarizer") 
+st.markdown("<h1 style='text-align: center;'>GPT-4 Powered Meeting Transcriber and Summarizer</h1>", unsafe_allow_html=True)
+
+st.markdown("""
+Drop in your audio or video file and after it's finished you'll have a word doc with:
+* Meeting summary
+* Key points
+* Action items
+""")
 
 # Put your secret key in the Streamlit secrets.toml
 my_secret = st.secrets["OPENAI_API_KEY"]
