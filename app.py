@@ -6,9 +6,9 @@ from transcribe import transcribe_audio, meeting_minutes, save_as_docx
 my_secret = st.secrets["OPENAI_API_KEY"]
 
 # Create a file uploader for audio files
-uploaded_file = st.file_uploader("Upload audio",
-                                 type=['mp3', 'wav'],
-                                 max_upload_size=26214400)  # max 25 MB
+uploaded_file = st.file_uploader("Upload audio", type=['mp3', 'wav', 'm4a', 'webm', 'mp4', 'mpga', 'mpeg'])
+,
+                                 
 
 # Process the uploaded file
 if uploaded_file is not None:
@@ -27,5 +27,3 @@ if uploaded_file is not None:
 
   # Provide a link to download the docx file
   st.markdown(f"[Download the meeting minutes]({docx_filename})")
-
-#comment
