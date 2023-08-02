@@ -7,13 +7,11 @@ my_secret = st.secrets["OPENAI_API_KEY"]
 
 # Create a file uploader for audio files
 uploaded_file = st.file_uploader("Upload audio", type=['mp3', 'wav', 'm4a', 'webm', 'mp4', 'mpga', 'mpeg'])
-,
-                                 
 
 # Process the uploaded file
 if uploaded_file is not None:
   # Save the uploaded file temporarily
-  audio_file_path = 'uploaded_audio.mp3'
+  audio_file_path = 'uploaded_audio.' + uploaded_file.type.split('/')[1]
   with open(audio_file_path, 'wb') as f:
     f.write(uploaded_file.getbuffer())
 
