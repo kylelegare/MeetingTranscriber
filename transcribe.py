@@ -1,6 +1,7 @@
 # transcribe.py
 import openai
 from docx import Document
+import streamlit as st
 
 
 # Add your OPENAI_API_KEY to your environment variables
